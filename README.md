@@ -51,5 +51,5 @@ The app is deployed on Streamlit Community Cloud.
 ## Screenshot
 Screenshot of execution on BITS Virtual Lab.
 ![Screenshot1](image.png)
-![Screenshot2](image-1.png)
+![Screenshot2](image-3.png)
 ![Screenshot3](image-2.png)

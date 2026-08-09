@@ -13,12 +13,12 @@ The goal of this assignment is to implement multiple classification models on a 
 - **Target:** Wine quality (converted to binary: good ≥6, bad <6)
 
 ## GitHub Repository Link
-[\[Add your repo link here\]](https://github.com/2025ac05766-commits/ML_Assignment/tree/main)
+[\[Click here\]](https://github.com/2025ac05766-commits/ML_Assignment/tree/main)
 
 ## Models Used
 1. Logistic Regression  
 2. Decision Tree Classifier  
-3. K-Nearest Neighbor Classifier  
+3. K-Nearest Neighbor Classifier
 4. Naive Bayes Classifier  
 5. Random Forest (Ensemble)
 
@@ -46,7 +46,7 @@ The goal of this assignment is to implement multiple classification models on a 
 
 ## Deployment
 The app is deployed on Streamlit Community Cloud.  
-[[Add your live app link here](https://mlassignment-2025ac05766.streamlit.app/)]
+[\[Click here\]](https://mlassignment-2025ac05766.streamlit.app/)
 
 ## Screenshot
 Include screenshot of execution on BITS Virtual Lab.

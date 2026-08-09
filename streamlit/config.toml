@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#8B0000"        # deep wine red
+backgroundColor = "#FFF5F5"     # soft rose background
+secondaryBackgroundColor = "#FDEDEC"  # sidebar in pale wine tone
+textColor = "#2C2C2C"
+font = "serif"

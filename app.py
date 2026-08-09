@@ -61,6 +61,7 @@ ax_pie.pie(class_counts.values(), labels=[f"Class {k}" for k in class_counts.key
            autopct='%1.1f%%', colors=["#ff9999","#66b3ff"])
 ax_pie.set_title("Class Distribution")
 st.sidebar.pyplot(fig_pie)
+plt.close(fig_pie)
 
 st.sidebar.markdown("**Models Available:**")
 for m in models.keys():
@@ -113,12 +114,14 @@ with col1:
     ax.set_ylabel("Score")
     ax.set_title(f"{model_choice} Metrics")
     st.pyplot(fig)
+    plt.close(fig)
 
 with col2:
     fig_cm, ax_cm = plt.subplots()
     ConfusionMatrixDisplay.from_predictions(y_test, y_pred, ax=ax_cm, cmap="Reds")
     ax_cm.set_title(f"{model_choice} Confusion Matrix")
     st.pyplot(fig_cm)
+    plt.close(fig_cm)
 
 if model_choice == "Random Forest":
     with col3:
@@ -132,6 +135,7 @@ if model_choice == "Random Forest":
         ax.set_ylabel("Importance")
         ax.set_title("Random Forest Feature Importance")
         st.pyplot(fig)
+        plt.close(fig)
 
 # --- Compare all models button ---
 if st.button("Compare All Models"):
@@ -148,5 +152,27 @@ if st.button("Compare All Models"):
             "AUC": roc_auc_score(y_test, y_prob_all)
         }
 
+    # Convert results dict to DataFrame
+    df_results = pd.DataFrame(results).T
+
     st.subheader("📊 Model Comparison")
-    df_results
+    st.dataframe(df_results)
+
+    # Optional: allow download
+    csv_results = df_results.to_csv().encode('utf-8')
+    st.download_button(
+        label="📥 Download Comparison Metrics as CSV",
+        data=csv_results,
+        file_name="model_comparison.csv",
+        mime="text/csv"
+    )
+
+    # --- Grouped bar chart for all metrics ---
+    st.subheader("📊 Metrics Comparison (Grouped Bar Chart)")
+    fig_all, ax_all = plt.subplots(figsize=(10,6))
+    df_results.plot(kind="bar", ax=ax_all)
+    ax_all.set_ylabel("Score")
+    ax_all.set_title("Comparison of All Metrics Across Models")
+    ax_all.legend(loc="upper right")
+    st.pyplot(fig_all)
+    plt.close(fig_all)

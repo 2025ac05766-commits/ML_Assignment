@@ -49,4 +49,7 @@ The app is deployed on Streamlit Community Cloud.
 [\[Click here\]](https://mlassignment-2025ac05766.streamlit.app/)
 
 ## Screenshot
-Include screenshot of execution on BITS Virtual Lab.
+Screenshot of execution on BITS Virtual Lab.
+![Screenshot1](image.png)
+![Screenshot2](image-1.png)
+![Screenshot3](image-2.png)
